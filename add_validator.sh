@@ -29,6 +29,6 @@ sleep 3
 
 echo -e "\e[1m\e[32m3. Configuring Prometheus... \e[0m" && sleep 1
 
-yq -i -y '.scrape_configs[] |= (.job_name as $name | .static_configs += if $name == "prometheus" then [] else ([{targets:["'$VALIDATOR_IP'" + (if $name == "node" then ":9100" elif $name == "cosmos" then ":'$PROM_PORT'" else ":9300" end)], labels:(if $name == "validator" then {address: "'$VALOPER_ADDRESS'"} elif $name == "wallet" then {address: "'$WALLET_ADDRESS'"} elif $name == "node" then {instance: "'$PROJECT_NAME'"} else {} end)}]) end)' $PWD/prometheus.yml
+yq -i -y '.scrape_configs[] |= (.job_name as $name | .static_configs += if $name == "prometheus" then [] else ([{targets:["'$VALIDATOR_IP'" + (if $name == "node" then ":9100" elif $name == "cosmos" then ":'$PROM_PORT'" else ":9300" end)], labels:(if $name == "validator" then {address: "'$VALOPER_ADDRESS'"} elif $name == "wallet" then {address: "'$WALLET_ADDRESS'"} elif $name == "node" then {instance: "'$PROJECT_NAME'"} else {} end)}]) end)' $PWD/prometheus/prometheus.yml
 
 echo -e "\e[1m\e[32m4. Done! \e[0m" && sleep 1
