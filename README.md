@@ -1,4 +1,4 @@
-## Cascadia node grafana monitoring dashboard (works on any cosmos chain too)
+## Cascadia node grafana monitoring dashboard (works on any cosmos chain)
 
 ## 1. On the node side
 - enable Prometheus in validator config.toml file
