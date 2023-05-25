@@ -12,8 +12,8 @@ sudo pip install yq
 
 echo "=================================================="
 
-read -p "Enter validator IP: " VALIDATOR_IP
-read -p "Enter Prometheus port or hit Enter for default port [26660]: " PROM_PORT
+read -p "Enter validator node IP: " VALIDATOR_IP
+read -p "Enter Prometheus port on validator node. Or hit Enter for default port [26660]: " PROM_PORT
 PROM_PORT=${PROM_PORT:-26660}
 read -p "Enter valoper address: " VALOPER_ADDRESS
 read -p "Enter wallet address: " WALLET_ADDRESS
