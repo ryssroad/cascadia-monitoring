@@ -17,7 +17,7 @@ read -p "Enter Prometheus port or hit Enter for default port [26660]: " PROM_POR
 PROM_PORT=${PROM_PORT:-26660}
 read -p "Enter valoper address: " VALOPER_ADDRESS
 read -p "Enter wallet address: " WALLET_ADDRESS
-PROJECT_NAME="Cascadia"
+read -p "Enter project name: " PROJECT_NAME
 
 echo '================================================='
 echo -e "validator IP: \e[1m\e[32m$VALIDATOR_IP\e[0m"
