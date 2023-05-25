@@ -1,11 +1,13 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 read -p "Enter rpc_port value or hit Enter for default port [26657]: " RPC_PORT
 RPC_PORT=${RPC_PORT:-26657}
 read -p "Enter grpc_port value or hit Enter for default port [9090]: " GRPC_PORT
 GRPC_PORT=${GRPC_PORT:-9090}
-BOND_DENOM="aCC"
-BECH_PREFIX="cascadia"
+read -p "Enter bond_denom value or Enter for default [aCC]: " BOND_DENOM
+BOND_DENOM=${BOND_DENOM:-"aCC"}
+read -p "Enter bech_prefix value or Enter for default [cascadia]: " BECH_PREFIX
+BECH_PREFIX=${BECH_PREFIX:-"cascadia"}
 
 echo '================================================='
 echo -e "rpc_port: \e[1m\e[32m$RPC_PORT\e[0m"
