@@ -16,15 +16,18 @@ systemctl status node_exporter.service
 ss -tulpn | grep '9100\|9300'
 ```
 ## 2. On separate host (1/1/20 works)
-- install Grafana + Prometheus
+- install Docker + Docker Compose
+```bash
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+```
+- install & start Grafana + Prometheus docker
 ```bash
 git clone https://github.com/ryssroad/cascadia-monitoring
 cd cascadia-monitoring
-chmod u+x install_monitoring.sh
-./install_monitoring.sh
+chmod u+x add_validator.sh
+./add_validator.sh
 docker-compose up -d
 ```
 - login to grafana admin http://server_ip:9999 (default login **admin:admin**)
 - import dashboard **18825**
-
-- **OR** install Grafana + Prometheus manually and use **add_validator.sh** to configure Prometheus
